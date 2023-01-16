@@ -14,7 +14,7 @@
 
 8.SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2)=0 ORDER BY CITY ASC;
 
-Q9. Find the difference between the total number of CITY entries in the table and the number of
+9. Find the difference between the total number of CITY entries in the table and the number of
 distinct CITY entries in the table.
 =>
 SELECT (COUNT(city) - COUNT(distinct(city))) as Difference
@@ -22,7 +22,7 @@ FROM sample_dataset_2;
 
 
 
-Q10. Query the two cities in STATION with the shortest and longest CITY names, as well as their
+10. Query the two cities in STATION with the shortest and longest CITY names, as well as their
 respective lengths (i.e.: number of characters in the name). If there is more than one smallest or
 largest city, choose the one that comes first when ordered alphabetically.
 =>
@@ -39,7 +39,7 @@ WHERE
 
 
 
-Q11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result
+11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result
 cannot contain duplicates.
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -53,7 +53,7 @@ WHERE
 
 
 
-Q12. Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot
+12. Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot
 contain duplicates
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -67,7 +67,7 @@ WHERE
 
 
 
-Q13. Query the list of CITY names from STATION that do not start with vowels. Your result cannot
+13. Query the list of CITY names from STATION that do not start with vowels. Your result cannot
 contain duplicates.
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -81,7 +81,7 @@ WHERE
 
 
 
-Q14. Query the list of CITY names from STATION that do not end with vowels. Your result cannot
+14. Query the list of CITY names from STATION that do not end with vowels. Your result cannot
 contain duplicates
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -95,7 +95,7 @@ WHERE
 
 
 
-Q15. Query the list of CITY names from STATION that either do not start with vowels or do not end
+15. Query the list of CITY names from STATION that either do not start with vowels or do not end
 with vowels. Your result cannot contain duplicates.
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -107,7 +107,7 @@ WHERE
 
 
 
-Q16. Query the list of CITY names from STATION that do not start with vowels and do not end with
+16. Query the list of CITY names from STATION that do not start with vowels and do not end with
 vowels. Your result cannot contain duplicates.
 =>
 SELECT distinct(city) FROM sample_dataset_2
@@ -120,7 +120,7 @@ WHERE
 
 
 Product-sales Query:
-Q17 Write an SQL query that reports the products that were only sold in the first quarter of 2019. That is,
+17 Write an SQL query that reports the products that were only sold in the first quarter of 2019. That is,
 between 2019-01-01 and 2019-03-31 inclusive.
 Return the result table in any order.
 =>
@@ -131,7 +131,7 @@ WHERE
 
 
 
-Q18.Write an SQL query to find all the authors that viewed at least one of their own articles.
+18.Write an SQL query to find all the authors that viewed at least one of their own articles.
 Return the result table sorted by id in ascending order.
 =>
 SELECT author_id FROM views 
@@ -142,7 +142,7 @@ ORDER BY author_id;
 
 
 
-Q19. Write an SQL query to find the percentage of immediate orders in the table, rounded to 2 decimal
+19. Write an SQL query to find the percentage of immediate orders in the table, rounded to 2 decimal
 places.
 =>
 SELECT round(100 *
@@ -155,7 +155,7 @@ FROM delivery;
 
 
 
-Q20. Write an SQL query to find the ctr of each Ad. Round ctr to two decimal points.
+20. Write an SQL query to find the ctr of each Ad. Round ctr to two decimal points.
 Return the result table ordered by ctr in descending order and by ad_id in ascending order in case of a
 tie
 =>
@@ -169,7 +169,7 @@ ORDER BY CTR desc, ad_id ASC;
 
 
 
-Q21. Write an SQL query to find the team size of each of the employees.
+21. Write an SQL query to find the team size of each of the employees.
 Return result table in any order
 =>
 SELECT employee_id, 
@@ -179,7 +179,7 @@ from employee ORDER BY employee_id
 
 
 
-Q22. Write an SQL query to find the type of weather in each country for November 2019.
+22. Write an SQL query to find the type of weather in each country for November 2019.
 The type of weather is:
 ● Cold if the average weather_state is less than or equal 15,
 ● Hot if the average weather_state is greater than or equal to 25, and
@@ -202,7 +202,7 @@ ORDER BY wt.new_state
 
 
 
-Q23. Write an SQL query to find the average selling price for each product. average_price should be
+23. Write an SQL query to find the average selling price for each product. average_price should be
 rounded to 2 decimal places.
 Return the result table in any order.
 =>
@@ -215,7 +215,7 @@ GROUP BY product_id
 
 
 
-Q24. Write an SQL query to report the first login date for each player.
+24. Write an SQL query to report the first login date for each player.
 Return the result table in any order.
 =>
 select player_id, event_date as first_login_date FROM (SELECT player_id, event_date,
@@ -227,7 +227,7 @@ WHERE
 
 
 
-Q25. Write an SQL query to report the device that is first logged in for each player.
+25. Write an SQL query to report the device that is first logged in for each player.
 Return the result table in any order.
 =>
 select player_id, device_id as first_login_device FROM (SELECT player_id, device_id, event_date,
@@ -239,7 +239,7 @@ WHERE
 
 
 
-Q26. Write an SQL query to get the names of products that have at least 100 units ordered in February 2020
+26. Write an SQL query to get the names of products that have at least 100 units ordered in February 2020
 and their amount.
 Return result table in any order.
 =>
@@ -252,7 +252,7 @@ WHERE o.total_units >= 100
 
 
 
-Q27. Write an SQL query to find the users who have valid emails.
+27. Write an SQL query to find the users who have valid emails.
 A valid e-mail has a prefix name and a domain where:
 ● The prefix name is a string that may contain letters (upper or lower case), digits, underscore
 '_', period '.', and/or dash '-'. The prefix name must start with a letter.
@@ -266,7 +266,7 @@ WHERE
 
 
 
-Q28. Write an SQL query to report the customer_id and customer_name of customers who have spent at
+28. Write an SQL query to report the customer_id and customer_name of customers who have spent at
 least $100 in each month of June and July 2020.
 Return the result table in any order.
 =>
@@ -295,7 +295,7 @@ HAVING count(customer_id) > 1)
 
 
 
-Q29. Write an SQL query to report the distinct titles of the kid-friendly movies streamed in June 2020.
+29. Write an SQL query to report the distinct titles of the kid-friendly movies streamed in June 2020.
 Return the result table in any order.
 =>
 SELECT title FROM content
@@ -308,7 +308,7 @@ ORDER BY title
 
 
 
-Q30. Write an SQL query to find the npv of each query of the Queries table.
+30. Write an SQL query to find the npv of each query of the Queries table.
 Return the result table in any order
 =>
 SELECT q.id, q.year, IFNULL(npv_table.npv, 0) as npv_value FROM queries q
@@ -320,7 +320,7 @@ ON
 
 
 
-Q31. Write an SQL query to find the npv of each query of the Queries table.
+31. Write an SQL query to find the npv of each query of the Queries table.
 Return the result table in any order.
 =>
 SELECT q.id, q.year, IFNULL(npv_table.npv, 0) as npv_value FROM queries q
@@ -332,7 +332,7 @@ ON
 
 
 
-Q32. Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just
+32. Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just
 show null.
 =>
 SELECT IFNULL(e_uni.unique_id, NULL) as uniq_id, e.name FROM employee_uni as e_uni
@@ -346,7 +346,7 @@ ON
 
 
 
-Q33. Write an SQL query to report the distance travelled by each user.
+33. Write an SQL query to report the distance travelled by each user.
 Return the result table ordered by travelled_distance in descending order, if two or more users
 travelled the same distance, order them by their name in ascending order.
 =>
@@ -361,7 +361,7 @@ ORDER BY total_distance DESC, u.name ASC
 
 
 
-Q34. Write an SQL query to get the names of products that have at least 100 units ordered in February 2020
+34. Write an SQL query to get the names of products that have at least 100 units ordered in February 2020
 and their amount.
 Return result table in any order
 =>
@@ -374,7 +374,7 @@ WHERE o.total_units >= 100
 
 
 
-Q35. Write an SQL query to:
+35. Write an SQL query to:
 ● Find the name of the user who has rated the greatest number of movies. In case of a tie,
 return the lexicographically smaller user name.
 ● Find the movie name with the highest average rating in February 2020. In case of a tie, return
@@ -408,7 +408,7 @@ ORDER BY title ASC LIMIT 1
 
 
 
-Q36. Write an SQL query to report the distance travelled by each user.
+36. Write an SQL query to report the distance travelled by each user.
 Return the result table ordered by travelled_distance in descending order, if two or more users
 travelled the same distance, order them by their name in ascending order.
 =>
@@ -423,7 +423,7 @@ ORDER BY total_distance DESC, u.name ASC
 
 
 
-Q37. Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just
+37. Write an SQL query to show the unique ID of each user, If a user does not have a unique ID replace just
 show null.
 =>
 SELECT IFNULL(e_uni.unique_id, NULL) as uniq_id, e.name FROM employee_uni as e_uni
@@ -437,7 +437,7 @@ ON
 
 
 
-Q38. Write an SQL query to find the id and the name of all students who are enrolled in departments that no
+38. Write an SQL query to find the id and the name of all students who are enrolled in departments that no
 longer exist.
 =>
 	SELECT id, name FROM (SELECT name, id, department_id FROM students
@@ -447,7 +447,7 @@ HAVING
 
 
 
-Q39. Write an SQL query to report the number of calls and the total call duration between each pair of
+39. Write an SQL query to report the number of calls and the total call duration between each pair of
 distinct persons (person1, person2) where person1 < person2.
 Return the result table in any order.
 
@@ -467,7 +467,7 @@ GROUP BY person1, person2
 
 
 
-Q40. Write an SQL query to find the average selling price for each product. average_price should be
+40. Write an SQL query to find the average selling price for each product. average_price should be
 rounded to 2 decimal places.
 Return the result table in any order
 =>
@@ -480,7 +480,7 @@ GROUP BY product_id
 
 
 
-Q41. Write an SQL query to report the number of cubic feet of volume the inventory occupies in each
+41. Write an SQL query to report the number of cubic feet of volume the inventory occupies in each
 warehouse.
 =>
 SELECT w.name, sum((w.units * p.total_volume)) as total_cubic_feet FROM warehouse w 
@@ -492,7 +492,7 @@ GROUP BY w.name
 
 
 
-Q42. Write an SQL query to report the difference between the number of apples and oranges sold each day.
+42. Write an SQL query to report the difference between the number of apples and oranges sold each day.
 Return the result table ordered by sale_date.
 =>
 SELECT sa.sale_date, (SUM(sa.sold_num) - so.total_oranges) as diff FROM sales as sa
@@ -508,7 +508,7 @@ GROUP BY sale_date;
 
 
 
-Q43. Write an SQL query to report the fraction of players that logged in again on the day after the day they
+43. Write an SQL query to report the fraction of players that logged in again on the day after the day they
 first logged in, rounded to 2 decimal places. In other words, you need to count the number of players
 that logged in for at least two consecutive days starting from their first login date, then divide that
 number by the total number of players.
@@ -526,7 +526,7 @@ WHERE
 
 
 
-Q44. Write an SQL query to report the managers with at least five direct reports.
+44. Write an SQL query to report the managers with at least five direct reports.
 Return the result table in any order
 =>
 SELECT name FROM employee
@@ -539,7 +539,7 @@ HAVING
 
 
 
-Q45. Write an SQL query to report the respective department name and number of students majoring in
+45. Write an SQL query to report the respective department name and number of students majoring in
 each department for all departments in the Department table (even ones with no current students).
 Return the result table ordered by student_number in descending order. In case of a tie, order them by
 dept_name alphabetically.
@@ -555,7 +555,7 @@ ON
 
 
 
-Q46. Write an SQL query to report the customer ids from the Customer table that bought all the products in
+46. Write an SQL query to report the customer ids from the Customer table that bought all the products in
 the Product table.
 =>
 with CTE as (SELECT customer_id, COUNT(customer_id) as total_count FROM customer
